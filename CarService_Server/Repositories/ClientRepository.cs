@@ -26,6 +26,16 @@ namespace CarService_Server.Repositories
             }
         }
 
+        public static void AddClient(Client client)
+        {
+            using (var database = new ClientContext())
+            {
+                database.Clients.Add(client);
+
+                database.SaveChanges();
+            }
+        }
+
         public static void DeleteClient(Client client)
         {
             using (var database = new ClientContext())
