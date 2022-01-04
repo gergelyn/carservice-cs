@@ -36,6 +36,16 @@ namespace CarService_Server.Repositories
             }
         }
 
+        public static void UpdateClient(Client client)
+        {
+            using (var database = new ClientContext())
+            {
+                database.Clients.Update(client);
+
+                database.SaveChanges();
+            }
+        }
+
         public static void DeleteClient(Client client)
         {
             using (var database = new ClientContext())
