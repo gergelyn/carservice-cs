@@ -45,8 +45,19 @@ namespace CarService_Server.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(Client client, long id)
         {
+            var dbClient = ClientRepository.GetClient(id);
+
+            if (dbClient != null)
+            {
+                ClientRepository.UpdateClient(client);
+
+                return Ok();
+            } else
+            {
+                return NotFound();
+            }
         }
 
         // DELETE api/values/5
