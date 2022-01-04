@@ -1,24 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
 using CarService_Server.Models;
 
 namespace CarService_Server.Repositories
 {
     public class ClientContext : DbContext
     {
-        protected readonly IConfiguration Configuration;
+        public DbSet<Client> Clients { get; set; }
 
-        public ClientContext(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = Configuration.GetConnectionString("WebApiDatabase");
-            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-        }
+            var connectionString = "server=localhost;user=root;password=;database=CarServiceDb";
 
-        public DbSet<Client> Clients { get; set; }
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+
+            optionsBuilder.UseMySql(connectionString, serverVersion);
+        }
+        
     }
 }
