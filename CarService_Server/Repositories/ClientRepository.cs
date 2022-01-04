@@ -25,5 +25,15 @@ namespace CarService_Server.Repositories
                 return client;
             }
         }
+
+        public static void DeleteClient(Client client)
+        {
+            using (var database = new ClientContext())
+            {
+                database.Clients.Remove(client);
+
+                database.SaveChanges();
+            }
+        }
     }
 }
