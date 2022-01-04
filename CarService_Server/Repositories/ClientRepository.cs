@@ -6,5 +6,14 @@ namespace CarService_Server.Repositories
 {
     public class ClientRepository
     {
+        public static IList<Client> GetClients()
+        {
+            using (var database = new ClientContext())
+            {
+                var clients = database.Clients.ToList();
+
+                return clients;
+            }
+        }
     }
 }
