@@ -15,5 +15,15 @@ namespace CarService_Server.Repositories
                 return clients;
             }
         }
+
+        public static Client GetClient(long id)
+        {
+            using (var database = new ClientContext())
+            {
+                var client = database.Clients.Where(c => c.Id == id).FirstOrDefault();
+
+                return client;
+            }
+        }
     }
 }
