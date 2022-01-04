@@ -48,8 +48,18 @@ namespace CarService_Server.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
+            var client = ClientRepository.GetClient(id);
+
+            if (client != null)
+            {
+                ClientRepository.DeleteClient(client);
+                return Ok();
+            } else
+            {
+                return NotFound();
+            }
         }
     }
 }
