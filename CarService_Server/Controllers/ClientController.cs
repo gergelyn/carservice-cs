@@ -21,9 +21,17 @@ namespace CarService_Server.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Client> Get(int id)
         {
-            return "value";
+            var client = ClientRepository.GetClient(id);
+
+            if (client != null)
+            {
+                return Ok(client);
+            } else
+            {
+                return NotFound();
+            }
         }
 
         // POST api/values
