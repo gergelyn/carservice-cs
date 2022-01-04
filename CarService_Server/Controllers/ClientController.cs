@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using CarService_Server.Models;
+using CarService_Server.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CarService_Server.Controllers
 {
-    [Route("api/[controller]")]
-    public class ClientController : Controller
+    [Route("api/client")]
+    public class ClientController : ControllerBase
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<IEnumerable<Client>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var clients = ClientRepository.GetClients();
+
+            return Ok(clients);
         }
 
         // GET api/values/5
