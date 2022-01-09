@@ -16,6 +16,7 @@ else
                 <th>License Plate</th>
                 <th>Issue</th>
                 <th>Progress</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@ else
                     <td>@client.LicensePlate</td>
                     <td>@client.Issue</td>
                     <td>@client.Progress</td>
+                    <td>
+                        <a href="@($"clients/{client.Id}")" class="btn btn-info table-btn">Info</a>
+                    </td>
                 </tr>
             }
         </tbody>
