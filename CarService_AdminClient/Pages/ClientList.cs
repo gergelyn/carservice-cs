@@ -1,10 +1,23 @@
-﻿using System;
+﻿using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using CarService_AdminClient.Data;
+
+
 namespace CarService_AdminClient.Pages
 {
-    public class ClientList
+    public partial class ClientList
     {
-        public ClientList()
+        [Inject]
+        public HttpClient HttpClient { get; set; }
+
+        public Client[] Clients { get; set; }
+
+        protected override async Task OnInitializedAsync()
         {
+            Clients = await HttpClient.GetFromJsonAsync<Client[]>("client");
+            await base.OnInitializedAsync();
         }
     }
 }
