@@ -28,7 +28,6 @@ namespace CarService_AdminClient
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002/api/") });
         }
 
