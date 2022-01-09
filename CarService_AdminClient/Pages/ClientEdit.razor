@@ -1,5 +1,13 @@
-﻿<h3>Component1</h3>
+﻿@page "/clients/edit/{ClientID}"
 
-@code {
+@if (Client == null)
+{
+    <button type="button" class="btn btn-info" @onclick="@NavigateBack">Back</button>
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <button type="button" class="btn btn-info" @onclick="@NavigateBack">Back</button>
 
+    <ClientForm ButtonTitle="Edit" Client="@Client" SubmitForm="@SubmitForm"></ClientForm>
 }
