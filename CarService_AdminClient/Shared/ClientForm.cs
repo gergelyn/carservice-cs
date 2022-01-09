@@ -1,10 +1,19 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using CarService_AdminClient.Data;
+
 namespace CarService_AdminClient.Shared
 {
-    public class ClientForm
+    public partial class ClientForm
     {
-        public ClientForm()
-        {
-        }
+        [Parameter]
+        public string ButtonTitle { get; set; }
+
+        [Parameter]
+        public Client Client { get; set; }
+
+        [Parameter]
+        public Func<Task> SubmitForm { get; set; }
     }
 }

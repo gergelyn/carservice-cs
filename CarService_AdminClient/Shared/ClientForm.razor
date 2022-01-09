@@ -1,5 +1,37 @@
-﻿<h3>Component1</h3>
+﻿<EditForm Model="@Client" OnValidSubmit="@SubmitForm">
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="firstName" class="form-label">First name</label>
+        <InputText id="firstName" class="form-control" @bind-Value="@Client.FirstName" placeholder="Enter first name" required></InputText>
+    </div>
 
-@code {
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="lastName" class="form-label">Last name</label>
+        <InputText id="lastName" class="form-control" @bind-Value="@Client.LastName" placeholder="Enter last name"></InputText>
+    </div>
 
-}
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="carType" class="form-label">Car type</label>
+        <InputText id="carType" class="form-control" @bind-Value="@Client.CarType" placeholder="Enter car type" required></InputText>
+    </div>
+
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="licensePlate" class="form-label">License plate</label>
+        <InputText id="licensePlate" class="form-control" @bind-Value="@Client.LicensePlate" placeholder="Enter license plate" required></InputText>
+    </div>
+
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="issue" class="form-label">Issue</label>
+        <InputTextArea id="issue" class="form-control" @bind-Value="@Client.Issue" placeholder="Enter issue" required></InputTextArea>
+    </div>
+
+    <div class="mb-3 px-0 col-sm-4">
+        <label for="progress" class="form-label">Progress</label>
+        <InputSelect id="progress" class="form-control" @bind-Value="@Client.Progress">
+            <option value="Accepted">Accepted</option>
+            <option value="In progress">In progress</option>
+            <option value="Done">Done</option>
+        </InputSelect>
+    </div>
+
+    <button type="submit" class="btn btn-primary col-sm-4">@ButtonTitle</button>
+</EditForm>
