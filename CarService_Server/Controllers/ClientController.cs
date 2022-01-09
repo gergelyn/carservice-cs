@@ -36,7 +36,7 @@ namespace CarService_Server.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult Post(Client client)
+        public ActionResult Post([FromBody] Client client)
         {
             ClientRepository.AddClient(client);
 
