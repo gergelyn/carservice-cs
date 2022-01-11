@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Data\CustomValidators\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\CustomValidators\" />
+  </ItemGroup>
 </Project>
