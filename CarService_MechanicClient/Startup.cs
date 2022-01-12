@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CarService_MechanicClient.Data;
+using System.Net.Http;
 
 namespace CarService_MechanicClient
 {
@@ -27,7 +28,7 @@ namespace CarService_MechanicClient
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5002/api/") });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
