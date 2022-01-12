@@ -7,7 +7,7 @@ using CarService_AdminClient.Data;
 
 namespace CarService_AdminClient.Pages
 {
-    public partial class ClientEdit
+    public partial class ClientEdit : ComponentBase
     {
         [Inject]
         public HttpClient HttpClient { get; set; }
