@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
 
-namespace CarService_AdminClient.Data.CustomValidators
+namespace CarService_Common.Models.CustomValidators
 {
     public class LicensePlateAttribute : ValidationAttribute
     {
