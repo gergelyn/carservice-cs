@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using CarService_Server.Models;
+using CarService_Common.Models;
 
 namespace CarService_Server.Repositories
 {

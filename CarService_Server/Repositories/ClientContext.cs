@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
-using CarService_Server.Models;
+using CarService_Common.Models;
 
 namespace CarService_Server.Repositories
 {

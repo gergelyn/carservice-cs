@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using CarService_Server.Models;
+using CarService_Common.Models;
 using CarService_Server.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
