@@ -10,4 +10,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarService_Common\CarService_Common.csproj" />
+  </ItemGroup>
 </Project>

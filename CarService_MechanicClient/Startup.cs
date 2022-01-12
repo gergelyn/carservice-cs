@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CarService_MechanicClient.Data;
+using CarService_Common.Models;
 using System.Net.Http;
 
 namespace CarService_MechanicClient
