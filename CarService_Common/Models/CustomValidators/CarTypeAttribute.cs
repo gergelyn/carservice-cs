@@ -6,7 +6,7 @@ namespace CarService_Common.Models.CustomValidators
 {
     public class CarTypeAttribute : ValidationAttribute
     {
-        Regex carTypeRgx = new Regex(@"^[A-ZÁÉIÍOÓÖŐUÚÜŰ]+[a-záéiíoóöőuúüű]*(\s[A-ZÁÉIÍOÓÖŐUÚÜŰ]+[a-záéiíoóöőuúüű]*)*$");
+        Regex carTypeRgx = new Regex(@"^[A-ZÁÉIÍOÓÖŐUÚÜŰ]+[a-záéiíoóöőuúüű]*(\s*-*[A-ZÁÉIÍOÓÖŐUÚÜŰ]+[a-záéiíoóöőuúüű]*)*$");
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
