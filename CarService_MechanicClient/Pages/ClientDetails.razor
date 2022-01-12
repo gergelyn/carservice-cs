@@ -1,0 +1,41 @@
+﻿@page "/clients/{ClientID}"
+
+@if (Client == null)
+{
+    <button type="button" class="btn btn-info" @onclick="@NavigateBack">Back</button>
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <button type="button" class="btn btn-info" @onclick="@NavigateBack">Back</button>
+   
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>Name</strong></label>
+        <div class="col-sm-8">
+            <label type="text" class="form-control-plaintext">@Client.FirstName @Client.LastName</label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>Car type</strong></label>
+        <div class="col-sm-8">
+            <label type="text" class="form-control-plaintext">@Client.CarType</label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>License plate</strong></label>
+        <div class="col-sm-8">
+            <label type="text" class="form-control-plaintext">@Client.LicensePlate</label>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-4 col-form-label"><strong>Issue</strong></label>
+        <div class="col-sm-8">
+            <label type="text" class="form-control-plaintext">@Client.Issue</label>
+        </div>
+    </div>
+
+    <ProgressForm Client="@Client" SubmitForm="@SubmitForm"></ProgressForm>
+}
