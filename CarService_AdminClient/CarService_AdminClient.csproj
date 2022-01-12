@@ -10,4 +10,7 @@
   <ItemGroup>
     <Folder Include="Data\CustomValidators\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarService_Common\CarService_Common.csproj" />
+  </ItemGroup>
 </Project>

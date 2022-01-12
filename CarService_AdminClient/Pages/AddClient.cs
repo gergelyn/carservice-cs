@@ -2,7 +2,7 @@
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
-using CarService_AdminClient.Data;
+using CarService_Common.Models;
 
 namespace CarService_AdminClient.Pages
 {
