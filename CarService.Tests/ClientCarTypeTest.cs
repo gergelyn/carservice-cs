@@ -30,12 +30,19 @@ namespace CarService.Tests
             Assert.IsTrue(errors.Count == 0);
         }
 
+        [DataRow("audi")]
         [DataRow("aston martin")]
         [DataRow("aston Martin")]
         [DataRow("Aston martin")]
         [DataRow("Mercedes-benz")]
         [DataRow("mercedes-benz")]
         [DataRow("mercedes-Benz")]
+        [DataRow("Mercedes -Benz")]
+        [DataRow("Mercedes- Benz")]
+        [DataRow("Audi ")]
+        [DataRow("Mercedes -")]
+        [DataRow("Mercedes-")]
+        [DataRow("Mercedes- ")]
         [DataRow("")]
         [DataRow(" ")]
         [DataTestMethod]
